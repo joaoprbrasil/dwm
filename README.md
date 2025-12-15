@@ -15,7 +15,7 @@ This repository contains the dotfiles and source code (forks) required to replic
 | **Terminal** | Alacritty | Dark theme, **JetBrains Mono Nerd Font** set to Bold for a "Neon Glow" orange/white effect. |
 | **Compositor** | Picom | Enabled for Transparency and smooth shadows. |
 | **Monitoring** | btop / htop | Stylized system resource monitors. |
-| **System Info** | Fastfetch | Displays system specifications with the Arch logo on launch. |
+| **System Info** | Screenfetch | Displays system specifications with the Arch logo on launch. |
 | **Visuals** | feh / Papirus | Wallpaper management and Modern Icon Theme. |
 
 ## Prerequisites
