@@ -2,16 +2,21 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappih    = 10;       /* espaço horizontal entre janelas */
+static const unsigned int gappiv    = 10;       /* espaço vertical entre janelas */
+static const unsigned int gappoh    = 10;       /* espaço horizontal borda externa */
+static const unsigned int gappov    = 10;       /* espaço vertical borda externa */
+static       int smartgaps          = 0;        /* 1 = sem gaps se tiver só 1 janela */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
+static const char col_gray1[]       = "#0a0707"; /* Fundo da barra (O vazio do espaço, quase preto) */
+static const char col_gray2[]       = "#443333"; /* Borda da janela inativa (Cinza avermelhado escuro) */
+static const char col_gray3[]       = "#cccccc"; /* Texto inativo (Cinza claro para leitura) */
+static const char col_gray4[]       = "#ffffff"; /* Texto ativo (Branco puro para destaque) */
+static const char col_cyan[]        = "#0a0707"; /* Cor de destaque da barra e borda ativa (O fogo intenso da nebulosa) */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -96,6 +101,15 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },
+    	{ MODKEY|Mod1Mask,              XK_l,      incrgaps,       {.i = -1 } },
+    	{ MODKEY|Mod1Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
+    	{ MODKEY|Mod1Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
+    	{ MODKEY|Mod1Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
+    	{ MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
+    	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
+    	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+
 };
 
 /* button definitions */
