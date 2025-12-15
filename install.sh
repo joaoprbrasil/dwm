@@ -58,14 +58,10 @@ echo "Injecting custom config..."
 cp "$DWM_DIR/configs/slstatus/config.h" config.h
 sudo make clean install
 
-# Return to home directory to configure dotfiles
 cd $HOME
 
 echo -e "${GREEN}==> Configuring startup files (Universal Method)...${NC}"
 
-# -----------------------------------------------------------
-# STEP A: Create .xprofile (Background apps & configurations)
-# -----------------------------------------------------------
 if [ -f ".xprofile" ]; then
     mv .xprofile .xprofile.bak
     echo "Backup: Existing .xprofile moved to .xprofile.bak"
@@ -82,14 +78,7 @@ volumeicon &
 slstatus &
 EOF
 
-
-# Make it executable
 chmod +x .xprofile
-
-# -----------------------------------------------------------
-# STEP B: Create .xinitrc (For 'startx' users)
-# -----------------------------------------------------------
-# This file will simply import .xprofile settings before launching DWM.
 
 if [ -f ".xinitrc" ]; then
     mv .xinitrc .xinitrc.bak
@@ -109,7 +98,6 @@ cat > .xinitrc <<EOF
 exec dwm
 EOF
 
-# Make it executable
 chmod +x .xinitrc
 
 echo -e "${GREEN}==> Installation Completed Successfully!${NC}"
