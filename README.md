@@ -32,7 +32,7 @@ sudo pacman -S git
 
 ### Installation 
 ```bash
-git clone [https://github.com/joaoprbrasil/dwm](https://github.com/joaoprbrasil/dwm)
+git clone https://github.com/joaoprbrasil/dwm
 cd dwm
 chmod +x install.sh && ./install.sh
 ```
