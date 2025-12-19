@@ -93,8 +93,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 [ -f \$HOME/.xprofile ] && . \$HOME/.xprofile
-
-exec dwm
+ 
+while type dwm >/dev/null ; do
+    dwm && continue || break
+done
 EOF
 
 chmod +x .xinitrc
