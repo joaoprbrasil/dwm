@@ -61,7 +61,6 @@ echo "Injecting custom config..."
 cp "$DWM_DIR/configs/slstatus/config.h" config.h
 sudo make clean install
 
-# Return to home directory to configure dotfiles
 cd $HOME
 message 'Configuring startup files (Universal Method)...'
 
