@@ -36,8 +36,8 @@ cp configs/picom/picom.conf ~/.config/picom/picom.conf
 cp wallpapers/wallpaper.jpg ~/wallpapers/wallpaper.jpg
 
 # 2. dwm
-message 'Compiling and Installing DWM...'
-sudo make clean install
+message 'Compiling and Installing DWM via PKGBUILD...'
+makepkg -si --noconfirm
 
 # 3. Slstatus
 message 'Downloading, installing and Setuping the Slstatus...'
